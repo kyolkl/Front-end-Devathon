@@ -1,3 +1,8 @@
+# initialize project
+-npm install
+-npm run dev
+use development branch as a base to create your branch
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
