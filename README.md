@@ -1,8 +1,8 @@
 # initialize project
 
--npm install.
+  -npm install.
 
--npm run dev.
+  -npm run dev.
 
 use development branch as a base to create your branch.
 
