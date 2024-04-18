@@ -1,5 +1,9 @@
 import { useForm } from "react-hook-form";
 import { UserLoginForm } from "../types";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../api/user";
+import { useEffect } from "react";
+import axios from "axios";
 
 function LoginPage() {
   const initialValues: UserLoginForm = {
@@ -11,13 +15,16 @@ function LoginPage() {
     handleSubmit,
     formState: { errors },
   } = useForm({ defaultValues: initialValues });
-
+  getUser();
   const handleLogin = (formData: UserLoginForm) => {};
   return (
-    <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg p-10">
+    <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg">
+      <section className="bg-gray-300 p-10 text-center">
+        <h1 className="text-5xl font-black text-white">Iniciar session</h1>
+      </section>
       <form
         onSubmit={handleSubmit(handleLogin)}
-        className="space-y-8 p-10 bg-white"
+        className="space-y-8 bg-white p-10"
         noValidate
       >
         <div className="flex flex-col gap-5">
@@ -58,7 +65,7 @@ function LoginPage() {
         />
       </form>
 
-      <div className="flex flex-col gap-5 justify-center items-center">
+      <div className="flex flex-col gap-5 justify-center items-center mb-10">
         <p>
           doesn't have an account?{" "}
           <span className="text-sky-600 font-bold">Reguister</span>

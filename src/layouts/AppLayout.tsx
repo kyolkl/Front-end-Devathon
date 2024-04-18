@@ -15,7 +15,7 @@ function AppLayout() {
                 <Link to="/login">login</Link>
               </li>
               <li>
-                <Link to="/">item</Link>
+                <Link to="/register">register</Link>
               </li>
             </ul>
           </nav>
