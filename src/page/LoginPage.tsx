@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { UserLoginForm } from "../types";
 import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../api/user";
+import { getUser } from "../api/authUser";
 import { useEffect } from "react";
 import axios from "axios";
 

@@ -15,13 +15,3 @@ export type UserLoginForm = Pick<User, 'password' | "email" >;
 export type UserRegisterForm = Omit<User, 'id'>;
 
 
-export const getUserSchemaAll = z.array(
-  UserSchema.pick({
-  id: true,
-  username: true,
-  fullname: true,
-  email: true,
-  password: true,
-  password_confirmation: true,
-  })
-)
