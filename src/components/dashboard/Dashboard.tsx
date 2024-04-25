@@ -14,7 +14,7 @@ function Sidebar() {
           })}
         </section>
         <div className="mt-10 ">
-          <div className="flex flex-row items-center gap-3 py-5 text-xl border-b-gray-500 border-b-2">
+          <div className="flex flex-row items-center gap-3 py-5 text-xl border-b-gray-500 border-b-2 ">
             <IoIosSettings />
             <span>Settings</span>
           </div>

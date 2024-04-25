@@ -4,6 +4,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../api/authUser";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../components/Logo";
 
 export default function RegisterView() {
   const initialValues: UserRegisterForm = {
@@ -45,7 +46,9 @@ export default function RegisterView() {
     <>
       <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg bg-white">
         <section className="bg-gray-300 p-10 text-center">
-          <h1 className="text-5xl font-black text-white">Crear Cuenta</h1>
+          <h1 className="text-5xl font-black text-white grid place-content-center">
+            <Logo />
+          </h1>
           <p className="text-2xl font-light text-white mt-5">
             Llena el formulario para {""}
             <span className="font-bold"> crear tu cuenta</span>

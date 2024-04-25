@@ -5,6 +5,7 @@ import { getUser } from "../api/authUser";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Logo from "../components/Logo";
 
 function LoginPage() {
   const initialValues: UserLoginForm = {
@@ -20,8 +21,8 @@ function LoginPage() {
   const handleLogin = (formData: UserLoginForm) => {};
   return (
     <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg bg-white">
-      <section className="bg-gray-300 p-10 text-center">
-        <h1 className="text-5xl font-black text-white">Iniciar session</h1>
+      <section className="bg-gray-300 p-10 text-center grid place-content-center">
+        <Logo />
       </section>
       <form
         onSubmit={handleSubmit(handleLogin)}
