@@ -4,7 +4,7 @@ import { UserRegisterForm } from "../types";
 
 export const createUser = async (data: UserRegisterForm) => {
   try {
-    const response = await api.post("/v1/user", data);
+    const response = await api.post("/v1/users", data);
     return response;
   } catch (error) {
     if (isAxiosError(error)) {
@@ -16,7 +16,7 @@ export const createUser = async (data: UserRegisterForm) => {
 
 export const getUser = async () => {
   try {
-    const data = api.get("/v1/user");
+    const data = api.get("/v1/users");
     console.log(data);
   } catch (error) {
     console.log(error);

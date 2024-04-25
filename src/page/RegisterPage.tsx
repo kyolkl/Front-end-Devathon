@@ -3,6 +3,7 @@ import { UserRegisterForm } from "../types/index";
 import ErrorMessage from "../components/ErrorMessage";
 import { useMutation } from "@tanstack/react-query";
 import { createUser } from "../api/authUser";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterView() {
   const initialValues: UserRegisterForm = {
@@ -12,6 +13,8 @@ export default function RegisterView() {
     password: "",
     password_confirmation: "",
   };
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -30,6 +33,7 @@ export default function RegisterView() {
     },
     onSuccess: (data) => {
       console.log(data);
+      navigate("/");
     },
   });
 
@@ -39,7 +43,7 @@ export default function RegisterView() {
 
   return (
     <>
-      <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg">
+      <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg bg-white">
         <section className="bg-gray-300 p-10 text-center">
           <h1 className="text-5xl font-black text-white">Crear Cuenta</h1>
           <p className="text-2xl font-light text-white mt-5">
@@ -50,7 +54,7 @@ export default function RegisterView() {
 
         <form
           onSubmit={handleRegister}
-          className="space-y-8 p-10  bg-white mt-10"
+          className="space-y-8 p-10 mt-10"
           noValidate
         >
           <div className="flex flex-col gap-5">
@@ -79,10 +83,10 @@ export default function RegisterView() {
             <label className="font-normal text-2xl">Nombre de usuario</label>
             <input
               type="name"
-              placeholder="Nombre de usuario de Registro"
+              placeholder="Nick de usuario de Registro"
               className="w-full p-3  border-gray-300 border"
               {...register("username", {
-                required: "El Nombre de usuario es obligatorio",
+                required: "El nick de usuario es obligatorio",
               })}
             />
             {errors.username && (
@@ -155,7 +159,9 @@ export default function RegisterView() {
         <div className="flex flex-col gap-5 justify-center items-center mb-10">
           <p>
             Ready have an account?{" "}
-            <span className="text-sky-600 font-bold">Login</span>
+            <Link to="/" className="text-sky-600 font-bold">
+              Login
+            </Link>
           </p>
         </div>
       </div>

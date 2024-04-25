@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api/authUser";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const initialValues: UserLoginForm = {
@@ -18,13 +19,13 @@ function LoginPage() {
   getUser();
   const handleLogin = (formData: UserLoginForm) => {};
   return (
-    <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg">
+    <div className="max-w-md w-full mx-auto shadow-sm border-gray-300 border rounded-lg bg-white">
       <section className="bg-gray-300 p-10 text-center">
         <h1 className="text-5xl font-black text-white">Iniciar session</h1>
       </section>
       <form
         onSubmit={handleSubmit(handleLogin)}
-        className="space-y-8 bg-white p-10"
+        className="space-y-8 p-10"
         noValidate
       >
         <div className="flex flex-col gap-5">
@@ -68,7 +69,9 @@ function LoginPage() {
       <div className="flex flex-col gap-5 justify-center items-center mb-10">
         <p>
           doesn't have an account?{" "}
-          <span className="text-sky-600 font-bold">Reguister</span>
+          <Link to="/register" className="text-sky-600 font-bold">
+            Reguister
+          </Link>
         </p>
       </div>
     </div>
