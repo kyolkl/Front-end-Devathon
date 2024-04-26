@@ -1,5 +1,15 @@
 import z from 'zod';
 
+export const PasswordFormData = z.object({
+  category: z.string(),
+  name: z.string(),
+  user: z.string(),
+  url: z.string(),
+  password: z.string(),
+})
+
+export type PasswordFormData = z.infer<typeof PasswordFormData>;
+
 
 export const UserSchema = z.object({
   id: z.number(), // 

@@ -16,7 +16,7 @@ function LinksMenu({ item }: ILinksMenu) {
     >
       <div className="flex items-center gap-2">
         {<item.icon />}
-        <span>{item.label}</span>
+        <span className="hidden md:block">{item.label}</span>
       </div>
     </Link>
   );

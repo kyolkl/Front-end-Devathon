@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const user = {
   name: "Tom Cook",
@@ -10,8 +11,7 @@ const user = {
 };
 
 const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
+  { name: "Settings", href: "/user/settings" },
   { name: "Sign out", href: "#" },
 ];
 
@@ -55,15 +55,15 @@ export default function Grabatar() {
                           {userNavigation.map((item) => (
                             <Menu.Item key={item.name}>
                               {({ active }) => (
-                                <a
-                                  href={item.href}
+                                <Link
+                                  to={item.href}
                                   className={classNames(
                                     active ? "bg-gray-100" : "",
                                     "block px-4 py-2 text-sm text-gray-700"
                                   )}
                                 >
                                   {item.name}
-                                </a>
+                                </Link>
                               )}
                             </Menu.Item>
                           ))}

@@ -41,14 +41,6 @@ function CardPassword({ item }: IProps) {
                   type="button"
                   className="block px-3 py-1 text-sm leading-6 text-gray-900"
                 >
-                  Ver Tarea
-                </button>
-              </Menu.Item>
-              <Menu.Item>
-                <button
-                  type="button"
-                  className="block px-3 py-1 text-sm leading-6 text-gray-900"
-                >
                   Editar Tarea
                 </button>
               </Menu.Item>

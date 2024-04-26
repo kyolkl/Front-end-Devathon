@@ -12,15 +12,15 @@ export const DASHBOARD = [
     icon: HiOutlineViewGrid ,
   },
   {
-    key: "importardatos",
-    label: "Importar Datos",
-    parh: "/importar-datos",
+    key: "importdata",
+    label: "import data",
+    parh: "/import-data",
     icon: FaDatabase ,
   },
   {
-    key: "generador",
-    label: "Generador",
-    parh: "/generador",
+    key: "generator",
+    label: "Generator",
+    parh: "/generator",
     icon: RiAiGenerate ,
   }
 ]
@@ -32,8 +32,8 @@ export const SETTINGS = [
     icon: FaCircleUser ,
   },
   {
-    key: "logout",
-    label: "Logout",
+    key: "signout",
+    label: "Sign out",
     icon: IoLogOut ,
   },
 ]

@@ -4,6 +4,7 @@ import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
 import RegisterView from "./page/RegisterPage";
 import AuthLayout from "./layouts/AuthLayout";
+import ProfileUser from "./components/dashboard/ProfileUser";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<HomePage />} />
+            <Route path="/user/settings" element={<ProfileUser />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/" element={<LoginPage />} />
