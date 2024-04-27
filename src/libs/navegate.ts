@@ -8,19 +8,19 @@ export const DASHBOARD = [
   {
     key: "dashboard",
     label: "Dashboard",
-    parh: "/dashboard",
+    path: "/dashboard",
     icon: HiOutlineViewGrid ,
   },
   {
     key: "importdata",
     label: "import data",
-    parh: "/import-data",
+    path: "/import-data",
     icon: FaDatabase ,
   },
   {
     key: "generator",
     label: "Generator",
-    parh: "/generator",
+    path: "/generator",
     icon: RiAiGenerate ,
   }
 ]
@@ -28,7 +28,7 @@ export const SETTINGS = [
   {
     key: "user",
     label: "User",
-    parh: "/user",
+    path: "/user",
     icon: FaCircleUser ,
   },
   {

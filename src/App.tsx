@@ -4,7 +4,8 @@ import HomePage from "./page/HomePage";
 import LoginPage from "./page/LoginPage";
 import RegisterView from "./page/RegisterPage";
 import AuthLayout from "./layouts/AuthLayout";
-import ProfileUser from "./components/dashboard/ProfileUser";
+import ProfileUser from "./page/ProfileUser";
+import Generate from "./page/GeneratePage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path="/dashboard" element={<HomePage />} />
             <Route path="/user/settings" element={<ProfileUser />} />
+            <Route path="/generator" element={<Generate />} />
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/" element={<LoginPage />} />
