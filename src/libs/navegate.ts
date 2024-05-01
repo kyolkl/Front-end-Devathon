@@ -4,7 +4,7 @@ import { FaDatabase,FaCircleUser } from "react-icons/fa6";
 import { IoLogOut } from "react-icons/io5";
 
 
-export const DASHBOARD = [
+export const dashboard = [
   {
     key: "dashboard",
     label: "Dashboard",
@@ -13,7 +13,7 @@ export const DASHBOARD = [
   },
   {
     key: "importdata",
-    label: "import data",
+    label: "Import data",
     path: "/import-data",
     icon: FaDatabase ,
   },
@@ -24,7 +24,7 @@ export const DASHBOARD = [
     icon: RiAiGenerate ,
   }
 ]
-export const SETTINGS = [
+export const settings = [
   {
     key: "user",
     label: "User",
