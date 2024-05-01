@@ -17,11 +17,11 @@ function LinksMenu({ item }: ILinksMenu) {
   return (
     <Link
       to={item.path}
-      className="flex flex-col p-2 mt-5 hover:bg-gray-200 rounded-md text-white cursor-pointer w-[50px] md:w-full text-xl"
+      className="flex flex-col p-2 hover:bg-green-200 rounded-md cursor-pointer w-[50px] md:w-full"
     >
-      <div className="flex items-center justify-center gap-2 text-3xl md:text-xl md:justify-start ">
+      <div className="flex items-center justify-center gap-2 md:text-base md:justify-start text-green-600">
         {<item.icon />}
-        <span className="hidden md:block">{item.label}</span>
+        <span className="hidden md:block text-gray-700">{item.label}</span>
       </div>
     </Link>
   );
