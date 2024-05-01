@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
 
 function AppLayout() {
   return (
@@ -15,9 +14,6 @@ function AppLayout() {
         </div>
         <div>
           <Outlet />
-        </div>
-        <div className="bg-gray-300 col-span-2">
-          <Footer />
         </div>
       </div>
     </>
