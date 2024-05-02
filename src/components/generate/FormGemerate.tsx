@@ -1,29 +1,39 @@
+import { generatePassword } from "../../libs/generatePassword";
 import GeneratePassword from "./GeneratePassword";
 import GenerateUser from "./GenerateUser";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-export function FormGemerate() {
+export function FormGemerate({ setValue }) {
   const [isGenerate, setIsGenerate] = useState<boolean>(false);
+  useEffect(() => {
+    setValue("password");
+  }, []);
 
   let initialValue;
   if (isGenerate) {
     initialValue = {
       capitalizar: false,
       incluirnúmero: false,
-      lowercase: false,
+    };
+  } else {
+    initialValue = {
+      upercase: false,
+      symbol: false,
+      number: false,
+      length: 10,
     };
   }
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: initialValue,
   });
-  const onSubmit = handleSubmit((data: any) => {
-    console.log(data);
+  const onSubmit = handleSubmit((config: any) => {
+    if (!isGenerate) {
+      setValue("password");
+    } else {
+      setValue(generatePassword(config));
+    }
   });
 
   return (
@@ -62,7 +72,7 @@ export function FormGemerate() {
             </div>
           </div>
           {/*check */}
-          <GenerateUser isGenerate={isGenerate} />
+          <GenerateUser isGenerate={isGenerate} register={register} />
           <GeneratePassword isGenerate={isGenerate} />
         </div>
         {/*content checkout radio */}
