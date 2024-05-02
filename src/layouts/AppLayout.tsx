@@ -1,34 +1,35 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/layout/Sidebar";
+import Header from "../components/layout/Header";
 
 function AppLayout() {
   return (
     <>
-      <header className="bg-sky-500">
-        <div className="max-w-2xl mx-auto px-10 lg:max-w-6xl flex justify-between items-center h-16">
-          <h1>logo</h1>
-          <nav>
-            <ul className="flex gap-4">
-              <li>
-                <Link to="/">home</Link>
-              </li>
-              <li>
-                <Link to="/login">login</Link>
-              </li>
-              <li>
-                <Link to="/">item</Link>
-              </li>
-            </ul>
-          </nav>
+      <div className="grid grid-cols-[20%_minmax(0,_1fr)] grid-rows-[100px_minmax(0,_1fr)_100px] h-screen">
+        <div className=" row-span-2 h-full">
+          <Sidebar />
         </div>
-      </header>
-      <main className="max-w-2xl mx-auto px-10 mt-5 lg:max-w-6xl">
-        <Outlet />
-      </main>
-      <footer className="">
-        <div className="text-center mt-10">Team 6 Password-Manager</div>
-      </footer>
+        <div className="">
+          <Header />
+        </div>
+        <div>
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 }
 
 export default AppLayout;
+{
+  /* <>
+<div className="flex flex-row h-screen w-screen snap-none overflow-hidden">
+  <Sidebar />
+  <div className="w-full">
+    <Header />
+    <ListPassword />
+  </div>
+</div>
+<AddPasswordModal />
+</> */
+}
