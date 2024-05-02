@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Grabatar from "../dashboard/Grabatar";
+import Grabatar from "../users/Grabatar";
 
 function Header() {
   const navigate = useNavigate();

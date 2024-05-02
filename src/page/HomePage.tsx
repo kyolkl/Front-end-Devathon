@@ -1,5 +1,5 @@
-import ListPassword from "../components/dashboard/ListPassword";
-import AddPasswordModal from "../components/dashboard/AddPasswordModal";
+import ListPassword from "../components/passwords/ListPassword";
+import AddPasswordModal from "../components/passwords/AddPasswordModal";
 
 function HomePage() {
   return (

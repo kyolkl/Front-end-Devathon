@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GenerateUser from "../components/generate/GenerateUser";
-import GeneratePassword from "../components/generate/GeneratePassword";
+import GenerateUser from "../components/users/GenerateUser";
+import GeneratePassword from "../components/passwords/GeneratePassword";
 
 function Generate() {
   const [isGenerate, setIsGenerate] = useState<boolean>(false);
