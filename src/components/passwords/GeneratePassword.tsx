@@ -9,24 +9,11 @@ function GeneratePassword({ isGenerate }: Props) {
       {/*seleccionar password number o phrase */}
       <section className="flex gap-5 mt-2">
         <div>
-          <input
-            type="radio"
-            name="passwordOption"
-            id="password"
-            value="password"
-            checked
-          />
-          <label htmlFor="password" className="ml-2">
-            Password
-          </label>
+          <input type="radio" id="password" value="password" defaultChecked />
+          <label className="ml-2">Password</label>
         </div>
         <div>
-          <input
-            type="radio"
-            name="passwordOption"
-            id="phrase"
-            value="phrase"
-          />
+          <input type="radio" name="passwordO" id="phrase" value="phrase" />
           <label htmlFor="phrase" className="ml-2">
             Phrase
           </label>
@@ -39,7 +26,6 @@ function GeneratePassword({ isGenerate }: Props) {
         <div>
           <input
             type="checkbox"
-            name="upercase"
             id="upercase"
             aria-label="Mayuscula (A-Z)"
             value="upercase"
@@ -52,18 +38,16 @@ function GeneratePassword({ isGenerate }: Props) {
         <div>
           <input
             type="checkbox"
-            name="lowercase"
             id="lowercase"
             aria-label="Minúsculas (a-z)"
             value="lowercase"
-            checked
           />
           <label htmlFor="lowercase" className="ml-2">
             (a-z)
           </label>
         </div>
         <div>
-          <input type="checkbox" name="number" id="number" value="number" />
+          <input type="checkbox" id="number" value="number" />
           <label htmlFor="number" className="ml-2">
             (0-9)
           </label>

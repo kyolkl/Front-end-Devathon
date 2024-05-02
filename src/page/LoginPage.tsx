@@ -1,9 +1,6 @@
 import { useForm } from "react-hook-form";
 import { UserLoginForm } from "../types";
-import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api/authUser";
-import { useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 
@@ -12,11 +9,7 @@ function LoginPage() {
     email: "",
     password: "",
   };
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ defaultValues: initialValues });
+  const { register, handleSubmit } = useForm({ defaultValues: initialValues });
   getUser();
   const handleLogin = (formData: UserLoginForm) => {};
   return (

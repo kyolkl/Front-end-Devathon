@@ -13,7 +13,6 @@ const handleClick = (path: string) => {
 };
 
 function LinksMenu({ item }: ILinksMenu) {
-  console.log(item.path);
   return (
     <Link
       to={item.path}
