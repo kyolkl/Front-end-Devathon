@@ -1,5 +1,6 @@
 import z from 'zod';
 
+<<<<<<< HEAD
 export const PasswordFormData = z.object({
   category: z.string(),
   name: z.string(),
@@ -26,3 +27,12 @@ export type UserLoginForm = Pick<User, 'password' | "email" >;
 export type UserRegisterForm = Omit<User, 'id'>;
 
 
+=======
+export const UserSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+})
+
+export type User = z.infer<typeof UserSchema>;
+export type UserLoginForm = Pick<User, 'password' | "email" >;
+>>>>>>> dcc2ad9 (Add folders and dependency")

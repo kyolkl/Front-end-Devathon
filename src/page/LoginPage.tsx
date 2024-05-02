@@ -4,6 +4,8 @@ import { getUser } from "../api/authUser";
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 
+import React from "react";
+
 function LoginPage() {
   const initialValues: UserLoginForm = {
     email: "",
