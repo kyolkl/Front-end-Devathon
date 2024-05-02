@@ -1,6 +1,6 @@
 import { dashboard, settings } from "../../libs/navegate";
 import Logo from "../Logo";
-import LinksMenu from "../sidebar/LinksMenu";
+import LinksMenu from "./LinksMenu";
 
 function Sidebar() {
   return (
