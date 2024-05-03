@@ -1,22 +1,24 @@
 import { useNavigate } from "react-router-dom";
-import Grabatar from "../users/Grabatar";
+// import Grabatar from "../users/Grabatar";
+import { FaUserCircle } from "react-icons/fa";
+import { IoMdAdd } from "react-icons/io";
 
 function Header() {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-300 ">
-      <div className="grid grid-cols-2 items-center justify-center p-4 ">
-        <h1 className="text-semibold sm:text-2xl xl:text-4xl">Password Safe</h1>
-        <nav className="flex justify-end">
-          <button
-            className="inline-flex items-center rounded-md bg-gray-50 px-2 text-xs font-medium text-gray-600"
-            onClick={() => navigate("?newPassword=true")}
-          >
-            new
-          </button>
-          <Grabatar />
-        </nav>
-      </div>
+    <div className="border-b-[0.13rem] border-gray-200">
+      <nav className="flex justify-end items-center p-3 gap-4">
+        <button
+          className="bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 rounded-md text-white flex flex-row gap-2 justify-center items-center p-2"
+          onClick={() => navigate("?newPassword=true")}
+        >
+          <span className="text-white text-xl">
+            <IoMdAdd />
+          </span>
+          New item
+        </button>
+        <FaUserCircle className="text-5xl text-gray-400"/>
+      </nav>
     </div>
   );
 }
