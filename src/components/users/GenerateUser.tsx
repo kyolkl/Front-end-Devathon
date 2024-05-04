@@ -1,10 +1,8 @@
-
 type Props = {
   isGenerate: boolean;
 };
 
 function GenerateUser({ isGenerate, register }: Props) {
-
   return (
     <div className={`mt-10 ${isGenerate ? "block" : "hidden"}`}>
       <p className="mb-2">Opciones</p>

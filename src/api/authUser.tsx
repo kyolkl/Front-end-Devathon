@@ -17,7 +17,7 @@ export const createUser = async (data: UserRegisterForm) => {
 export const getUser = async () => {
   try {
     const data = api.get("/v1/users");
-    console.log(data);
+    return data;
   } catch (error) {
     console.log(error);
   }

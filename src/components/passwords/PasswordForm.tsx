@@ -1,5 +1,11 @@
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 import { PasswordFormData } from "../../types";
+import { RiAiGenerate } from "react-icons/ri";
+import { GrView } from "react-icons/gr";
+import { BiHide } from "react-icons/bi";
+
+import { useState } from "react";
+import { generatePasswordForm } from "../../libs/generatePassword";
 import ErrorMessage from "../ErrorMessage";
 type PasswordFormProps = {
   errors: FieldErrors<PasswordFormData>;
@@ -7,6 +13,19 @@ type PasswordFormProps = {
 };
 
 export default function PasswordForm({ errors, register }: PasswordFormProps) {
+  const [input, setInput] = useState("");
+  const [view, setVieq] = useState(false);
+
+  const textField = register("password", { required: true });
+  const handlePassword = () => {
+    const password = generatePasswordForm();
+    setInput(password);
+  };
+
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-5">
@@ -73,18 +92,38 @@ export default function PasswordForm({ errors, register }: PasswordFormProps) {
         </div>
 
         <div className="flex flex-col gap-5 mt-5">
-          <label className="font-normal" htmlFor="description">
-            Password
+          <label
+            className="font-normal flex items-center gap-3"
+            htmlFor="description"
+          >
+            <p>Password</p>
+            <span
+              className="bg-gray-300 rounded-full p-2"
+              onClick={handlePassword}
+            >
+              <RiAiGenerate />
+            </span>
           </label>
-          <input
-            id="password"
-            type="password"
-            placeholder="Descripción de la tarea"
-            className="w-full p-3  border-gray-300 border"
-            {...register("user", {
-              required: "password",
-            })}
-          />
+          <div className="flex items-center">
+            <input
+              id="password"
+              type={view ? "text" : "password"}
+              placeholder="Descripción de la tarea"
+              className="w-full p-3  border-gray-300 border"
+              {...textField}
+              onChange={(e) => {
+                textField.onChange(e);
+                handleSubmit(e);
+              }}
+              value={input}
+            />
+            <button
+              className="bg-gray-300 h-full p-3"
+              onClick={() => setVieq(!view)}
+            >
+              {!view ? <GrView /> : <BiHide />}
+            </button>
+          </div>
           {errors.url && <ErrorMessage>{errors.url.message}</ErrorMessage>}
         </div>
       </div>

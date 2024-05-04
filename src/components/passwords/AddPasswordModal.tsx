@@ -11,7 +11,6 @@ export default function AddPasswordModal() {
   const location = useLocation();
   const queyParam = new URLSearchParams(location.search);
   const query = queyParam.get("newPassword");
-  console.log(query);
   const show = query ? true : false;
 
   //obteniendo id de los proyectos
@@ -33,9 +32,7 @@ export default function AddPasswordModal() {
     formState: { errors },
   } = useForm({ defaultValues: initialValue });
 
-  const handleFom = handleSubmit((data) => {
-    console.log(data);
-  });
+  const handleFom = handleSubmit((data) => {});
   return (
     <>
       <Transition appear show={show} as={Fragment}>

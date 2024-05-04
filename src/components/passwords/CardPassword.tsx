@@ -11,7 +11,6 @@ interface IProps {
 }
 
 function CardPassword({ item }: IProps) {
-  console.log(item);
   return (
     <li className="p-5  border-slate-800 flex justify-between gap-3 border-t-gray-300 border-t-2">
       <div className="flex flex-col gap-y-2">

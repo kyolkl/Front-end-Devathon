@@ -1,14 +1,21 @@
-import { generatePassword } from "../../libs/generatePassword";
+import {
+  generatePassword,
+  generatePassword2,
+} from "../../libs/generatePassword";
 
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import GenerateUser from "../users/GenerateUser";
 import GeneratePassword from "../passwords/GeneratePassword";
 
-export function FormGemerate({ setValue }) {
+type value = {
+  setValue: () => void;
+};
+
+export function FormGemerate({ setValue }: value) {
   const [isGenerate, setIsGenerate] = useState<boolean>(false);
   useEffect(() => {
-    setValue("password");
+    setValue(generatePassword({ lowerCase: true }));
   }, []);
 
   let initialValue;
@@ -22,7 +29,7 @@ export function FormGemerate({ setValue }) {
       upercase: false,
       symbol: false,
       number: false,
-      length: 10,
+      length: 7,
     };
   }
 
@@ -31,7 +38,7 @@ export function FormGemerate({ setValue }) {
   });
   const onSubmit = handleSubmit((config: any) => {
     if (!isGenerate) {
-      setValue("password");
+      setValue(generatePassword2(config));
     } else {
       setValue(generatePassword(config));
     }
@@ -74,7 +81,7 @@ export function FormGemerate({ setValue }) {
           </div>
           {/*check */}
           <GenerateUser isGenerate={isGenerate} register={register} />
-          <GeneratePassword isGenerate={isGenerate} />
+          <GeneratePassword isGenerate={isGenerate} register={register} />
         </div>
         {/*content checkout radio */}
         <div className="flex gap-5 mt-5">
