@@ -4,28 +4,23 @@ import LinksMenu from "./LinksMenu";
 
 function Sidebar() {
   return (
-    <div className="h-screen w-[300px] shadow-xl">
+    <div className="h-screen w-[20%] shadow-xl">
       <div className="flex flex-col w-60 md:w-full p-3">
         <Logo />
         <ul className="flex flex-col gap-2 mt-3">
-          {
-            dashboard.map((item) => (
-              <li key={item.key}>
-                <LinksMenu item={item} />
-              </li>
-            ))
-          }
+          {dashboard.map((item) => (
+            <li key={item.key}>
+              <LinksMenu item={item} />
+            </li>
+          ))}
           <div className="flex flex-row items-center gap-3 p-2 text-lg">
             <span className="hidden md:block">Tools</span>
           </div>
-          {
-            settings.map((item) => (
-              <li key={item.key}>
-                <LinksMenu item={item} />
-              </li>
-            )) 
-          }
-
+          {settings.map((item) => (
+            <li key={item.key}>
+              <LinksMenu item={item} />
+            </li>
+          ))}
         </ul>
       </div>
     </div>

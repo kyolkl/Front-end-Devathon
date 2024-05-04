@@ -22,7 +22,7 @@ export function FormGemerate({ setValue }: value) {
   if (isGenerate) {
     initialValue = {
       capitalizar: false,
-      incluirnúmero: false,
+      incluirnumero: false,
     };
   } else {
     initialValue = {
@@ -32,15 +32,16 @@ export function FormGemerate({ setValue }: value) {
       length: 7,
     };
   }
-
-  const { register, handleSubmit } = useForm({
+  const { register, reset, handleSubmit } = useForm({
     defaultValues: initialValue,
   });
   const onSubmit = handleSubmit((config: any) => {
     if (!isGenerate) {
       setValue(generatePassword2(config));
+      console.log(config);
     } else {
       setValue(generatePassword(config));
+      console.log(config);
     }
   });
 
@@ -50,9 +51,10 @@ export function FormGemerate({ setValue }: value) {
         onSubmit={(e) => {
           e.preventDefault();
           onSubmit();
+          reset();
         }}
       >
-        <div className="mt-10 text-xl">
+        <div className="text-xl">
           <p>What do you want to generate?</p>
           <div className="flex mt-2 gap-5 border-b-2 border-gray-300">
             <div>

@@ -1,5 +1,6 @@
 import Sidebar from "../components/layout/Sidebar";
 import Dashboard from "../components/dashboard/Dashboard";
+import AddPasswordModal from "../components/passwords/AddPasswordModal";
 
 function AppLayout() {
   return (
@@ -8,6 +9,7 @@ function AppLayout() {
         <Sidebar />
         <Dashboard />
       </main>
+      <AddPasswordModal />
     </>
   );
 }

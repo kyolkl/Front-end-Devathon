@@ -15,10 +15,10 @@ function GenerateUser({ isGenerate, register }: Props) {
       <div>
         <input
           type="checkbox"
-          id="incluirnúmero"
-          {...register("incluirnúmero")}
+          id="incluirnumero"
+          {...register("incluirnumero")}
         />
-        <label htmlFor="incluirnúmero" className="ml-2">
+        <label htmlFor="incluirnumero" className="ml-2">
           Incluir número
         </label>
       </div>

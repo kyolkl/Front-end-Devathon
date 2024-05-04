@@ -17,7 +17,7 @@ function Header() {
           </span>
           New item
         </button>
-        <FaUserCircle className="text-5xl text-gray-400"/>
+        <FaUserCircle className="text-5xl text-gray-400" />
       </nav>
     </div>
   );
