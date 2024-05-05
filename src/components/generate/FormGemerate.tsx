@@ -3,7 +3,7 @@ import { generatePassword } from "../../libs/generatePassword";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import GenerateUser from "../users/GenerateUser";
-import GeneratePassword from "../passwords/GeneratePassword";
+import GeneratePassword from "../passwords/PasswordGenerator";
 
 export function FormGemerate({ setValue }) {
   const [isGenerate, setIsGenerate] = useState<boolean>(false);

@@ -6,7 +6,6 @@ import PasswordForm from "./PasswordForm";
 import { PasswordFormData } from "../../types";
 
 export default function AddPasswordModal() {
-  //obteniendo si el modal esite
   const navitage = useNavigate();
   const location = useLocation();
   const queyParam = new URLSearchParams(location.search);
@@ -14,7 +13,6 @@ export default function AddPasswordModal() {
   console.log(query);
   const show = query ? true : false;
 
-  //obteniendo id de los proyectos
   const params = useParams();
   const projectId = params.projectId!;
 
