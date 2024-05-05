@@ -1,27 +1,11 @@
-import CardPassword from "./PasswordItem";
+import PasswordItem from "./PasswordItem";
 
-const listaPassword = [
-  {
-    key: "1",
-    web: "https://www.google.com",
-    email: "email@gmail.com",
-    password: "123456",
-  },
-  {
-    key: "2",
-    web: "https://www.google.com",
-    email: "email@gmail.com",
-    password: "123456",
-  },
-];
-function ListPassword() {
+function Password() {
   return (
     <ul className="w-full flex flex-col p-5 mt-10 gap-5">
-      {listaPassword.map((item) => {
-        return <CardPassword key={item.key} item={item} />;
-      })}
+      {/* TODO: Get all the passwords of the logged in user */}
     </ul>
   );
 }
 
-export default ListPassword;
+export default Password;
